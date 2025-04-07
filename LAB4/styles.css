@@ -1,0 +1,174 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    background-color: #f8f9fa;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+header {
+    background-color: #007bff;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    margin-bottom: 10px;
+}
+
+header nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+header nav ul li {
+    margin: 0 15px;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.page-layout {
+    display: flex;
+    width: 80%;
+    max-width: 960px; /* Увеличим максимальную ширину, чтобы вместить сайдбары */
+    margin-bottom: 20px;
+}
+
+.page-layout > nav {
+    background-color: #e9ecef;
+    padding: 15px;
+    border-radius: 8px;
+    margin-right: 20px;
+    width: 20%; /* Занимает 20% ширины */
+    box-sizing: border-box;
+}
+
+.page-layout > nav h3 {
+    margin-top: 0;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.page-layout > nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.page-layout > nav ul li {
+    margin-bottom: 8px;
+}
+
+.page-layout > nav ul li a {
+    text-decoration: none;
+    color: #333;
+}
+
+.container {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    width: 60%; /* Занимает 60% ширины */
+    box-sizing: border-box;
+}
+
+.page-layout > aside {
+    background-color: #e9ecef;
+    padding: 15px;
+    border-radius: 8px;
+    margin-left: 20px;
+    width: 20%; /* Занимает 20% ширины */
+    box-sizing: border-box;
+}
+
+.page-layout > aside h3 {
+    margin-top: 0;
+    color: #555;
+}
+
+footer {
+    background-color: #343a40;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    width: 100%;
+    font-size: 0.9em;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #555;
+}
+
+input[type="text"],
+input[type="datetime-local"],
+select {
+    width: calc(100% - 16px);
+    padding: 10px;
+    border: 1px solid #ced4da;
+    border-radius: 6px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+input[type="text"]:focus,
+input[type="datetime-local"]:focus,
+select:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.checkbox-group label,
+.radio-group label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: normal;
+    color: #555;
+}
+
+.checkbox-group input[type="checkbox"],
+.radio-group input[type="radio"] {
+    margin-right: 8px;
+}
+
+button[type="submit"] {
+    background-color: #28a745;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+    width: 100%;
+}
+
+button[type="submit"]:hover {
+    background-color: #218838;
+}
+
+.error-message {
+    color: #dc3545;
+    font-size: 0.9em;
+    margin-top: 5px;
+}

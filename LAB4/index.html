@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Опрос посетителей Дня Города</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Празднование Дня Города!</h1>
+        <p>Присоединяйтесь к нашему опросу!</p>
+        <nav>
+            <ul>
+                <li><a href="#">Главная</a></li>
+                <li><a href="#">О мероприятии</a></li>
+                <li><a href="#">Контакты</a></li>
+                <li><a href="results.html">Результаты опроса</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="page-layout">
+        <nav>
+            <h3>Навигация</h3>
+            <ul>
+                <li><a href="#">Главная</a></li>
+                <li><a href="#">О мероприятии</a></li>
+                <li><a href="#">Расписание</a></li>
+                <li><a href="#">Фотографии</a></li>
+                <li><a href="#">Контакты</a></li>
+            </ul>
+        </nav>
+
+        <div class="container">
+            <h2>Опрос посетителей Дня Города</h2>
+            <form id="surveyForm">
+                <div class="form-group">
+                    <label for="name">Как ваше имя?</label>
+                    <input type="text" id="name" name="name" required>
+                    <div class="error-message" id="nameError"></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="visitTime">Укажите время вашего посещения мероприятия:</label>
+                    <input type="datetime-local" id="visitTime" name="visitTime">
+                </div>
+
+                <div class="form-group">
+                    <label>Какие активности вам понравились больше всего? (можно выбрать несколько):</label>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="concert" name="activities" value="concert">
+                        <label for="concert">Концертная программа</label>
+                        <input type="checkbox" id="fair" name="activities" value="fair">
+                        <label for="fair">Ярмарка мастеров</label>
+                        <input type="checkbox" id="sports" name="activities" value="sports">
+                        <label for="sports">Спортивные соревнования</label>
+                        <input type="checkbox" id="kids" name="activities" value="kids">
+                        <label for="kids">Детские аттракционы</label>
+                        <input type="checkbox" id="fireworks" name="activities" value="fireworks">
+                        <label for="fireworks">Фейерверк</label>
+                    </div>
+                    <div class="error-message" id="activitiesError"></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="organizationRating">Как вы оцениваете организацию мероприятия?</label>
+                    <select id="organizationRating" name="organizationRating">
+                        <option value="">-- Выберите оценку --</option>
+                        <option value="excellent">Отлично</option>
+                        <option value="good">Хорошо</option>
+                        <option value="satisfactory">Удовлетворительно</option>
+                        <option value="poor">Плохо</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Вы впервые на Дне Города?</label>
+                    <div class="radio-group">
+                        <input type="radio" id="firstTimeYes" name="firstTime" value="yes">
+                        <label for="firstTimeYes">Да</label>
+                        <input type="radio" id="firstTimeNo" name="firstTime" value="no">
+                        <label for="firstTimeNo">Нет</label>
+                    </div>
+                </div>
+
+                <button type="submit">Отправить опрос</button>
+            </form>
+        </div>
+
+        <aside>
+            <h3>Ваше мнение важно!</h3>
+            <p>Спасибо за участие в опросе! Ваши ответы помогут сделать День Города в следующем году еще лучше.</p>
+            <p>Следите за новостями на наших страницах в социальных сетях: <a href="#">Facebook</a>, <a href="#">Instagram</a>.</p>
+        </aside>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 День Города. Все права защищены.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
