@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Выставка мобильной продукции</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Система учета представителей компаний</h1>
+    <h2>Выставка мобильной продукции</h2>
+    
+    <div class="container">
+        <div class="form-section">
+            <h3>Форма ввода данных</h3>
+            <form id="companyForm">
+                <input type="hidden" id="companyId">
+                
+                <label for="companyName">Название компании:</label>
+                <input type="text" id="companyName" required>
+                
+                <label for="country">Страна:</label>
+                <input type="text" id="country" required>
+                
+                <label for="email">Электронная почта:</label>
+                <input type="email" id="email" required>
+                
+                <label for="productCount">Количество продукции:</label>
+                <input type="number" id="productCount" min="0" required>
+                
+                <div class="button-group">
+                    <button type="button" id="saveBtn">Сохранить</button>
+                    <button type="button" id="clearBtn">Очистить</button>
+                </div>
+                
+                <label for="existingCompanies">Выберите компанию для редактирования/удаления:</label>
+                <select id="existingCompanies">
+                    <option value="">-- Выберите компанию --</option>
+                </select>
+                
+                <div class="button-group">
+                    <button type="button" id="editBtn">Редактировать</button>
+                    <button type="button" id="deleteBtn">Удалить</button>
+                </div>
+            </form>
+            
+            <div class="new-property">
+                <h3>Добавить новое свойство</h3>
+                <select id="propertySelect">
+                    <option value="">-- Выберите свойство --</option>
+                    <option value="contactPerson">Контактное лицо</option>
+                    <option value="phoneNumber">Телефон</option>
+                    <option value="website">Веб-сайт</option>
+                </select>
+                <input type="text" id="propertyValue" placeholder="Значение свойства">
+                <div class="button-group">
+                    <button type="button" id="addPropertyBtn">Добавить свойство</button>
+                    <button type="button" id="removePropertyBtn">Удалить свойство</button>
+                </div>
+                <div id="propertyDisplay" class="property-display"></div>
+            </div>
+        </div>
+        
+        <div class="display-section">
+            <h3>Список компаний</h3>
+            <button type="button" id="sortBtn">Сортировать по количеству продукции</button>
+            <div id="sortedCountries"></div>
+            <table id="companiesTable">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Название</th>
+                        <th>Страна</th>
+                        <th>Email</th>
+                        <th>Продукция</th>
+                        <th>Доп. свойства</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
