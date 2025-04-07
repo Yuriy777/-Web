@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Результаты опроса</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .results-container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+            width: 80%;
+            max-width: 800px;
+            margin: 20px auto;
+        }
+        h2 {
+            text-align: center;
+            color: #007bff;
+            margin-bottom: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #dee2e6;
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="results-container">
+        <h2>Результаты опроса</h2>
+        <table id="resultsTable">
+            <tbody>
+                </tbody>
+        </table>
+        <p><a href="index.html">Вернуться к опросу</a></p>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            let resultsTableBody = null;
+            const resultsTable = document.getElementById('resultsTable');
+            if (resultsTable) {
+                resultsTableBody = resultsTable.querySelector('tbody');
+            }
+            const surveyDataJSON = localStorage.getItem('surveyData');
+    
+            if (surveyDataJSON) {
+                const surveyData = JSON.parse(surveyDataJSON);
+    
+                function addTableRow(label, value) {
+                    const row = resultsTableBody.insertRow();
+                    const labelCell = row.insertCell();
+                    const valueCell = row.insertCell();
+                    labelCell.textContent = label;
+                    valueCell.textContent = value;
+                }
+    
+                addTableRow('Имя', surveyData.name);
+                addTableRow('Время посещения', surveyData.visitTime || '-');
+                addTableRow('Понравившиеся активности', surveyData.activities.length > 0 ? surveyData.activities.join(', ') : '-');
+                addTableRow('Оценка организации', surveyData.organizationRating || '-');
+                addTableRow('Впервые на Дне Города', surveyData.firstTime === 'yes' ? 'Да' : surveyData.firstTime === 'no' ? 'Нет' : '-');
+            } else {
+                const row = resultsTableBody.insertRow();
+                const cell = row.insertCell();
+                cell.colSpan = 2;
+                cell.textContent = 'Данные опроса отсутствуют.';
+            }
+        });
+    </script>
+</body>
+</html>
