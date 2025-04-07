@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Лабораторная работа №5</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Форма с переключением языка</h1>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="#">Главная</a></li>
+            <li><a href="#">О проекте</a></li>
+            <li><a href="#">Контакты</a></li>
+        </ul>
+    </nav>
+    
+    <div class="main-content">
+        <section>
+            <header>
+                <h2>Индивидуальное задание №5</h2>
+            </header>
+            
+            <article>
+                <div class="form-container">
+                    <div class="input-group">
+                        <label id="label1">Имя:</label>
+                        <input type="text" id="field1" class="text-field">
+                    </div>
+                    
+                    <div class="input-group">
+                        <label id="label2">Фамилия:</label>
+                        <input type="text" id="field2" class="text-field">
+                    </div>
+    
+                    <div class="input-group">
+                        <label id="label3">Email:</label>
+                        <input type="text" id="field3" class="text-field">
+                    </div>
+    
+                    <div class="input-group">
+                        <label id="label4">Телефон:</label>
+                        <input type="text" id="field4" class="text-field">
+                    </div>
+    
+                    <div class="style-selector">
+                        <label>Стиль текста:</label>
+                        <select id="styleSelector">
+                            <option value="12px Arial, #333">Обычный</option>
+                            <option value="16px Times New Roman, #FF0000">Красный</option>
+                            <option value="14px Verdana, #0000FF">Синий</option>
+                        </select>
+                    </div>
+    
+                    <div class="button-group">
+                        <button type="button" onclick="switchLanguage('ru')">Русский</button>
+                        <button type="button" onclick="switchLanguage('en')">English</button>
+                        <button type="button" onclick="showLists()">Показать списки</button>
+                    </div>
+                </div>
+            </article>
+            <footer>
+                <p>Нижний колонтитул страницы</p>
+            </footer>
+        </section>
+        <aside>
+            <div class="sidebar-block">
+                <h3>Дополнительная информация</h3>
+                <ul>
+                    <li>Дата: <span id="current-date"></span></li>
+                    <li>Язык: <span id="current-lang">Русский</span></li>
+                    <li>Пользователей онлайн: 42</li>
+                </ul>
+                <div class="news">
+                    <h4>Последние новости</h4>
+                    <p>Обновление системы - добавлена мультиязычность</p>
+                    <p>Новые функции будут доступны в следующем обновлении</p>
+                </div>
+            </div>
+        </aside>
+    </div>
+
+    <footer>
+        <p>Контактная информация: example@domain.com</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
